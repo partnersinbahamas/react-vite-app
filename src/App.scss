@@ -11,6 +11,10 @@
   border-radius: 50%;
   object-position: -1rem;
   object-fit: cover;
+
+  &-no-position {
+    object-position: initial;
+  }
 }
 
 .logo {

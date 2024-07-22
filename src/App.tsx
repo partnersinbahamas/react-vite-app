@@ -26,6 +26,9 @@ function App() {
           <img src={meImage} className="me" alt="Vite logo" />
           {meImageUrl}
         </a>
+         {/* from public folder extends fast path */}
+        <img src='./me-young.png' className="me me-no-position" alt="Vite logo" />
+        Public
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
