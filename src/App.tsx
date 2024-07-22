@@ -2,9 +2,14 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import inlineStyles from './App.scss?inline';
+import user from './utils/json/user.json';
+import userUrl from './utils/json/user.json?url';
+import userRaw from './utils/json/user.json?raw'; // returns a raw json object
 
 function App() {
   const [count, setCount] = useState(0);
+
+  console.log(user, userRaw);
 
   return (
     <>
