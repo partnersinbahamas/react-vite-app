@@ -12,6 +12,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   console.log(styles);
+  console.log(user, userRaw, userUrl);
 
   return (
     <>
