@@ -5,6 +5,14 @@
   text-align: center;
 }
 
+.me {
+  height: 6em;
+  width: 6rem;
+  border-radius: 50%;
+  object-position: -1rem;
+  object-fit: cover;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

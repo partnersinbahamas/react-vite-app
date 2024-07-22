@@ -7,6 +7,8 @@ import styles from './App.module.scss';
 import user from './utils/json/user.json';
 import userUrl from './utils/json/user.json?url';
 import userRaw from './utils/json/user.json?raw'; // returns a raw json object
+import meImageUrl from './assets/me-work.jpeg?url'; // return url path to image folder
+import meImage from './assets/me-work.jpeg';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,6 +22,10 @@ function App() {
         {inlineStyles}
       </style>
       <div>
+        <a href="https://www.linkedin.com/in/denys-bokov-339b22277/" target="_blank">
+          <img src={meImage} className="me" alt="Vite logo" />
+          {meImageUrl}
+        </a>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
