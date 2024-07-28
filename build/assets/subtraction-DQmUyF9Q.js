@@ -1,0 +1,1 @@
+console.log("subtraction");const o="returns numbers subtraction";function r(t,n){return console.log(`${t} - ${n} = ${t-n}`),`subtraction: ${t} - ${n} = ${t-n}`}export{r as default,o as funcDescription};

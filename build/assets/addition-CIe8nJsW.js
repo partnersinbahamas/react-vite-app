@@ -1,0 +1,1 @@
+console.log("addition");const i="returns numbers funcDescription";function t(n,o){return console.log(`${n} + ${o} = ${n+o}`),`addition: ${n} + ${o} = ${n+o}`}export{t as default,i as funcDescription};
