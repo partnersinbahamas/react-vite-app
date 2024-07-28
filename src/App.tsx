@@ -26,9 +26,10 @@ import meImage from './assets/me-work.jpeg';
 const mathModules = import.meta.glob('/src/mathFunctions/*.ts', ); // eager disable a dynamic behavior, so it call modules from box
 
 function App() {
+  const devMode = import.meta.env.APP_DEV_MODE;
+  
   const [count, setCount] = useState(0);
   const [maths, setMaths] = useState<any[]>([]);
-
   console.log(styles);
   console.log(user, userRaw, userUrl);
   console.log(mathModules);
@@ -51,6 +52,7 @@ function App() {
           <li>{math}</li>
         ))}
       </ul>
+      <pre>{devMode}</pre>
       <div>
         <a href="https://www.linkedin.com/in/denys-bokov-339b22277/" target="_blank">
           <img src={meImage} className="me" alt="Vite logo" />
