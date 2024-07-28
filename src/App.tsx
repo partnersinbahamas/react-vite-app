@@ -4,9 +4,11 @@ import viteLogo from '/vite.svg'
 import inlineStyles from './App.scss?inline';
 import './App.scss';
 import styles from './App.module.scss';
-import user from './utils/json/user.json';
-import userUrl from './utils/json/user.json?url';
-import userRaw from './utils/json/user.json?raw'; // returns a raw json object
+// @ts-ignore
+// 'json' is reduced path from vite.config file
+import user from 'json/user.json';
+import userUrl from 'json/user.json?url';
+import userRaw from 'json/user.json?raw'; // returns a raw json object
 import meImageUrl from './assets/me-work.jpeg?url'; // return url path to image folder
 import meImage from './assets/me-work.jpeg';
 
