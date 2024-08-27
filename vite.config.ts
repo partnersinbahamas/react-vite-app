@@ -7,6 +7,9 @@ import path from 'path'
 export default defineConfig({
   envPrefix: 'APP_',
   // publicDir: 'viteBuild', // allows to rename public folder on npm run build
+  // sourcemap: true,
+  // emptyOutDir: true,
+  // outDir: 'build' // Ensure this matches the directory you're using in gh-pages
   build: {
     outDir: 'build' // Ensure this matches the directory you're using in gh-pages
   },
@@ -14,6 +17,11 @@ export default defineConfig({
     react(),
     Inspect(),
   ],
+  // rollupOptions: {
+  //   output: {
+  //     // preserveModules: true, // save the src map on build
+  //   },
+  // },
   resolve: {
     // aliases to reduce the file path
     alias: {
