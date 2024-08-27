@@ -1,0 +1,1 @@
+console.log("multiplication");const n="returns numbers multiplication";function o(i,t){return console.log(`${i} * ${t} = ${i*t}`),`multiplication: ${i} * ${t} = ${i*t}`}export{o as default,n as funcDescription};
