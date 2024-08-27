@@ -14,6 +14,21 @@ export default defineConfig({
   build: {
     outDir: 'build' // Ensure this matches the directory you're using in gh-pages
   },
+  server: { // you can change settings for preview as well 
+    port: 7777, // change your local server port
+    strictPort: true, // means that server port will never change. if server with the same port exist, it will throw an error.
+    open: '/api/carts', // lint witch must be opened after npm run dev
+    headers: {
+      "its-db-vite-project": "true",
+    },
+    proxy: { // redirecting requests that originate from your application to another server.
+      '/api': {
+        target: 'https://dummyjson.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
+  },
   plugins: [
     react(),
     Inspect(),
