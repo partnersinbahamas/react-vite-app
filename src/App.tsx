@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -11,6 +12,8 @@ import userUrl from 'json/user.json?url';
 import userRaw from 'json/user.json?raw'; // returns a raw json object
 import meImageUrl from './assets/me-work.jpeg?url'; // return url path to image folder
 import meImage from './assets/me-work.jpeg';
+// @ts-ignore
+import products from './utils/csv/products.csv';
 
 /*
   eager: disable a dynamic behavior, so it call module from box;
@@ -33,6 +36,7 @@ function App() {
   console.log(styles);
   console.log(user, userRaw, userUrl);
   console.log(mathModules);
+  console.log(products);
 
   useEffect(() => {
     Object.values(mathModules)
