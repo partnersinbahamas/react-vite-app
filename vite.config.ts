@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import Inspect from 'vite-plugin-inspect'
 import react from '@vitejs/plugin-react'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+import PluginCSV from './vite-plugin-csv';
 import path from 'path'
 
 // https://vitejs.dev/config/
@@ -17,7 +18,7 @@ export default defineConfig({
   server: { // you can change settings for preview as well 
     port: 7777, // change your local server port
     strictPort: true, // means that server port will never change. if server with the same port exist, it will throw an error.
-    open: '/api/carts', // lint witch must be opened after npm run dev
+    // open: '/api/carts', // lint witch must be opened after npm run dev
     headers: {
       "its-db-vite-project": "true",
     },
@@ -30,8 +31,9 @@ export default defineConfig({
     }
   },
   plugins: [
-    react(),
+    react({jsxRuntime: 'classic'}),
     Inspect(),
+    PluginCSV(),
     ViteImageOptimizer({
       jpeg: { quality: 80 },
       png: { quality: 80 },
