@@ -20,6 +20,17 @@ export default () => {
     // transformIndexHtml(html) {
     //   return '<span>Hello world</span>'
     // }
+    configureServer (server) {
+      server.ws.on(
+        'connection',
+        () => server.ws.send('connected', 'Conntection stable')
+      )
+
+      server.ws.on('ping', (message, client) => {
+        console.log(message);
+        client.send('pong', 'Hello client');
+      })
+    },
     async handleHotUpdate(contenxt) {
       if (/\.csv$/.test(contenxt.file)) {
         contenxt.server.ws.send({

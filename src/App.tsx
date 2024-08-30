@@ -45,13 +45,22 @@ function App() {
           setMaths((current) => [...current, module.default(1, 2)])));
   }, []);
 
-  if (import.meta.hot) import.meta.hot.on(
-    'csv-update',
-    ({ url, data }) => {
-      console.log('[vite]: hot update ', url);
-      console.log('csv-updated-products: ', data)
-    }
-  );
+  if (import.meta.hot) {
+    import.meta.hot.on(
+      'csv-update',
+      ({ url, data }) => {
+        console.log('[vite]: hot update ', url);
+        console.log('csv-updated-products: ', data)
+      }
+    );
+
+    import.meta.hot.on('connected', (message) => {
+      console.log(message);
+      if (import.meta.hot) import.meta.hot.send('ping', 'Hello server!');
+    })
+
+    import.meta.hot.on('pong', message => console.log(message));
+  }
 
   return (
     <>
