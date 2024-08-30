@@ -20,5 +20,19 @@ export default () => {
     // transformIndexHtml(html) {
     //   return '<span>Hello world</span>'
     // }
+    async handleHotUpdate(contenxt) {
+      if (/\.csv$/.test(contenxt.file)) {
+        contenxt.server.ws.send({
+          type: 'custom',
+          event: 'csv-update',
+          data: {
+            url: contenxt.modules[0].url,
+            data: parse(await contenxt.read(), { columns: true }),
+          }
+        });
+      }
+
+      return [];
+    }
   }
 }

@@ -36,7 +36,7 @@ function App() {
   console.log(styles);
   console.log(user, userRaw, userUrl);
   console.log(mathModules);
-  console.log(products);
+  console.log('csv-products: ', products);
 
   useEffect(() => {
     Object.values(mathModules)
@@ -44,6 +44,14 @@ function App() {
         importModule().then((module: any) =>
           setMaths((current) => [...current, module.default(1, 2)])));
   }, []);
+
+  if (import.meta.hot) import.meta.hot.on(
+    'csv-update',
+    ({ url, data }) => {
+      console.log('[vite]: hot update ', url);
+      console.log('csv-updated-products: ', data)
+    }
+  );
 
   return (
     <>
