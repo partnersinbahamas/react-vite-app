@@ -14,6 +14,7 @@ import meImageUrl from './assets/me-work.jpeg?url'; // return url path to image 
 import meImage from './assets/me-work.jpeg';
 // @ts-ignore
 import products from './utils/csv/products.csv';
+import './utils/js/module';
 
 /*
   eager: disable a dynamic behavior, so it call module from box;
